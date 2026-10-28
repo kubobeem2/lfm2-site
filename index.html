@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFM2-2.6B</title>
+<style>
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    padding: 40px 20px 0;
+    font-size: 2.6em;
+    letter-spacing: 0.05em;
+}
+h2 {
+    color: #ff4757;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #333;
+}
+.container {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #555;
+    margin: 20px auto;
+}
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.85em;
+    padding: 30px 20px 50px;
+}
+footer a { color: #ff4757; }
+</style>
+</head>
+<body>
+<h1>LFM2-2.6B</h1>
+<section>
+<h2>概要</h2>
+<div class="container">
+<p>LiquidAI製、2.6Bパラメータのモデルで、畳み込みと注意機構のハイブリッド構造を採用。計算深さは30層。</p>
+</div>
+<h2>実測ベンチマーク</h2>
+<div class="container">
+<p>実測ベンチマークは2vCPU仮想マシンで計測。量子化Q4_K_M方式では1.45GiBのモデルサイズ。</p>
+<table>
+<tr><th>項目</th><th>値</th></tr>
+<tr><td>モデル</td><td>LFM2-2.6B（2.57Bパラメータ）</td></tr>
+<tr><td>量子化</td><td>Q4_K_M / 1.45 GiB</td></tr>
+<tr><td>計測環境</td><td>2vCPU 仮想マシン（llama.cpp、CPU推論）</td></tr>
+<tr><td>prefill</td><td>31.7 tok/s（pp512）</td></tr>
+<tr><td>生成（decode）</td><td>11.3 tok/s（tg128）</td></tr>
+</table>
+</div>
+
+<h2>作らせたページ一覧</h2>
+<div class="container">
+<p>このトップページに続き、LFM2-2.6B にテーマ別で5ページ追加生成させた。各ページの末尾から、生で出したHTML（整形前）も見られる。</p>
+<table>
+<tr><th>ページ</th><th>内容</th></tr>
+<tr><td><a href="story.html" style="color:#ff4757">メモリの海を泳ぐ小さなAI</a></td><td>短編小説。小さなAIが居場所を見つける話</td></tr>
+<tr><td><a href="recipe.html" style="color:#ff4757">深夜の唐揚げ</a></td><td>レシピ。ただし唐揚げなのに豚ひき肉を使う</td></tr>
+<tr><td><a href="future.html" style="color:#ff4757">2050年の日常</a></td><td>未来予測。交通・仕事・食事・エンタメ</td></tr>
+<tr><td><a href="poem.html" style="color:#ff4757">2.6Bの独り言</a></td><td>詩。小さいモデルなりの独白</td></tr>
+<tr><td><a href="quiz.html" style="color:#ff4757">LFM2クイズ</a></td><td>自分に関するクイズ4問。答えは盛大に間違っている</td></tr>
+</table>
+</div>
+<h2>このページはLFM2-2.6B自身が生成しました</h2>
+</section>
+<footer>
+生成: LFM2-2.6B（Q4_K_M / llama.cpp）&nbsp;|&nbsp; 整形・デプロイ: おもち（Cloudflare Workers）&nbsp;|&nbsp; <a href="originals/index.html">モデルが生で出したHTMLはこちら</a>
+</footer>
+</body>
+</html>
